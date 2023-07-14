@@ -1,6 +1,5 @@
 import Mon from '../../components/Month';
 import UserMonth from '../../actions/getUser';
-import Users from '@/app/actions/getAllUsers';
 import MonthItem from '../../components/monthItem'
 import Link from 'next/link';
 
