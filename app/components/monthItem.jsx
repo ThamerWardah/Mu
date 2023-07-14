@@ -6,12 +6,8 @@ import { toast } from "react-hot-toast"
 const MonthItem = ({monthData})=>{
     const router = useRouter();
 
-    const handleDelete = async(id)=>{
-      
-        const data = {
-            id,
-           
-        }
+    const handleDelete = async(id)=>{  
+    const data = { id }
         axios.post('/api/deleted',data).then((callback)=>{
             if(!callback?.error ){
                 toast.success('Deleted');
@@ -19,8 +15,8 @@ const MonthItem = ({monthData})=>{
             };
             if(callback?.error){toast.error('Somthing wrong happend')}
         })
-    
     }
+
     return(
         <div>
                <div className='flex flex-col gap-y-4 mt-20'>
@@ -29,7 +25,7 @@ const MonthItem = ({monthData})=>{
                         <div className='flex gap-x-8'>
                             <h1>{item.month}</h1>
                             <h1 className='text-green-500'>{item.money}</h1>
-                            <h3>{JSON.stringify(item.createdAt).slice(1,11)}</h3>
+                            <h3 className="text-sm  pt-[2px] ">{JSON.stringify(item.createdAt).slice(1,11)}</h3>
                         </div>
                         <button type="button" onClick={()=>handleDelete(item.id)} className='text-red-500'>Delete</button>
                     </div>
