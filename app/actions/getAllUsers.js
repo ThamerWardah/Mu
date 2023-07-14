@@ -1,6 +1,6 @@
 import prisma from '../Libs/prismadb';
 
- const Users = async () =>{
+ export default async function Users(){
     const users = await prisma.user.findMany();
 
     if(!users){return []}
@@ -8,4 +8,3 @@ import prisma from '../Libs/prismadb';
     return users
 }
 
-export default Users ;
