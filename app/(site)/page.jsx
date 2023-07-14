@@ -1,9 +1,8 @@
 import UsersList from '../components/UserList'
-import Users from '@/app/actions/getAllUsers'
+import prisma from '../Libs/prismadb';
 
 export default async function Home() {
-
-  const users = await Users() || [] ;
+  const users = await prisma.user.findMany() || [];
   
   return (
     <div className="p-5 ">
