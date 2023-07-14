@@ -1,8 +1,8 @@
 import UsersList from '../components/UserList'
-import Users from '@/app/actions/getAllUsers'
-
+import UserMonth from '../actions/getUser';
 export default async function Home() {
-  const users = await Users();
+  const listOfUsers = await UserMonth();
+  const users = await UserMonth();
   return (
     <div className="p-5 ">
      <UsersList users={users}/>

@@ -3,9 +3,9 @@ import axios from "axios"
 import { useRouter } from "next/navigation"
 import { toast } from "react-hot-toast"
 
-const MonthItem = ({monthData})=>{
+const MonthItem = ({monthsData})=>{
     const router = useRouter();
-
+    const monthData = monthsData[0]
     const handleDelete = async(id)=>{  
     const data = { id }
         axios.post('/api/deleted',data).then((callback)=>{
