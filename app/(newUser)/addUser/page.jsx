@@ -33,7 +33,7 @@ export default function NewUser(){
 
     return(
         <div className="h-full bg-gray-100">
-           {!isLoading && <h1 onClick={()=>router.push('/')} className='absolute top-6  right-10 cursor-pointer px-4 py-1 rounded-lg font-bold bg-black text-white '>Exit</h1>}
+           {!isLoading && <h1 onClick={()=>router.push('/dashboard')} className='absolute top-6  right-10 cursor-pointer px-4 py-1 rounded-lg font-bold bg-black text-white '>Exit</h1>}
             <div className="flex justify-center items-center h-full">
                 <form onSubmit={handleSubmit} className="flex flex-col gap-6 w-3/4">
 
